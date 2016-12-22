@@ -290,4 +290,61 @@ public class Temperature {
             }
         }
     }
+
+    /**
+     * Converts this Temperature to the specified unit type (scale).
+     *
+     * @param newUnit
+     *         The unit type (scale) to convert to.
+     *
+     * @return
+     *         Returns this object.
+     */
+    public Temperature convertToUnit(final TemperatureUnit newUnit) {
+        switch (newUnit) {
+            case CELSIUS: {
+                unit = TemperatureUnit.CELSIUS;
+                temperature = getAsCelsius();
+                return this;
+            }
+            case DELISLE: {
+                unit = TemperatureUnit.DELISLE;
+                temperature = getAsDelisle();
+                return this;
+            }
+            case FAHRENHEIT: {
+                unit = TemperatureUnit.FAHRENHEIT;
+                temperature = getAsFahrenheit();
+                return this;
+            }
+            case KELVIN: {
+                unit = TemperatureUnit.KELVIN;
+                temperature = getAsKelvin();
+                return this;
+            }
+            case NEWTON: {
+                unit = TemperatureUnit.NEWTON;
+                temperature = getAsNewton();
+                return this;
+            }
+            case RANKINE: {
+                unit = TemperatureUnit.RANKINE;
+                temperature = getAsRankine();
+                return this;
+            }
+            case REAUMUR: {
+                unit = TemperatureUnit.REAUMUR;
+                temperature = getAsReaumur();
+                return this;
+            }
+            case ROMER: {
+                unit = TemperatureUnit.ROMER;
+                temperature = getAsRomer();
+                return this;
+            }
+            default: {
+                throw new IllegalArgumentException("The unit " + unit.name() + " is not supported by the convertToCelsius method.");
+            }
+        }
+    }
 }
