@@ -30,7 +30,7 @@ You can now use the VTemperature in your project.
 Construct a new Temperature object specifying both the unit type and temperature value, various conversion
 methods can then be called on the object to get the temperature value in a different unit type (scale).
 
-Example - Code:
+##### Example - Code:
 
     public class Test {
         public static void main(final String[] args) {
@@ -62,7 +62,7 @@ Example - Code:
         }
     }
     
-Example - Output:
+##### Example - Output:
 
     The initial temperature is 30.0°C.
     As Celsius:	30.0
