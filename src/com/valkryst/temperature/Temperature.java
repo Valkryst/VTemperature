@@ -23,6 +23,23 @@ public class Temperature {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+
+        if (obj instanceof Temperature) {
+            return false;
+        }
+
+        final Temperature other = (Temperature) obj;
+        boolean areUnitsEqual = other.getUnit().equals(unit);
+        boolean areTemperaturesEqual = other.getTemperature() == temperature;
+
+        return areUnitsEqual & areTemperaturesEqual;
+    }
+
+    @Override
     public String toString() {
         return temperature + TemperatureUnit.getSymbol(unit);
     }
