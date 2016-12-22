@@ -23,23 +23,6 @@ public class Temperature {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-
-        if (obj instanceof Temperature) {
-            return false;
-        }
-
-        final Temperature other = (Temperature) obj;
-        boolean areUnitsEqual = other.getUnit().equals(unit);
-        boolean areTemperaturesEqual = other.getTemperature() == temperature;
-
-        return areUnitsEqual & areTemperaturesEqual;
-    }
-
-    @Override
     public String toString() {
         return temperature + TemperatureUnit.getSymbol(unit);
     }
@@ -318,45 +301,46 @@ public class Temperature {
      *         Returns this object.
      */
     public Temperature convertToUnit(final TemperatureUnit newUnit) {
+        // The unit must be changed after the temperature is converted as the conversion methods rely on the unit.
         switch (newUnit) {
             case CELSIUS: {
-                unit = TemperatureUnit.CELSIUS;
                 temperature = getAsCelsius();
+                unit = TemperatureUnit.CELSIUS;
                 return this;
             }
             case DELISLE: {
-                unit = TemperatureUnit.DELISLE;
                 temperature = getAsDelisle();
+                unit = TemperatureUnit.DELISLE;
                 return this;
             }
             case FAHRENHEIT: {
-                unit = TemperatureUnit.FAHRENHEIT;
                 temperature = getAsFahrenheit();
+                unit = TemperatureUnit.FAHRENHEIT;
                 return this;
             }
             case KELVIN: {
-                unit = TemperatureUnit.KELVIN;
                 temperature = getAsKelvin();
+                unit = TemperatureUnit.KELVIN;
                 return this;
             }
             case NEWTON: {
-                unit = TemperatureUnit.NEWTON;
                 temperature = getAsNewton();
+                unit = TemperatureUnit.NEWTON;
                 return this;
             }
             case RANKINE: {
-                unit = TemperatureUnit.RANKINE;
                 temperature = getAsRankine();
+                unit = TemperatureUnit.RANKINE;
                 return this;
             }
             case REAUMUR: {
-                unit = TemperatureUnit.REAUMUR;
                 temperature = getAsReaumur();
+                unit = TemperatureUnit.REAUMUR;
                 return this;
             }
             case ROMER: {
-                unit = TemperatureUnit.ROMER;
                 temperature = getAsRomer();
+                unit = TemperatureUnit.ROMER;
                 return this;
             }
             default: {
