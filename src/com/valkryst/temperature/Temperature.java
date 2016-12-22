@@ -79,7 +79,7 @@ public class Temperature {
                 return (33 - temperature) * (50.0/11.0);
             }
             case RANKINE: {
-                return (671.67 - temperature) * (5.0/9.0);
+                return (671.67 - temperature) * (5.0/6.0);
             }
             case REAUMUR: {
                 return (80 - temperature) * (15.0/8.0);
@@ -106,7 +106,7 @@ public class Temperature {
                 return temperature;
             }
             case KELVIN: {
-                return (temperature - (9.0/5.0)) - 459.67;
+                return ((temperature - 273.15) * (18.0/10.0)) + 32;
             }
             case NEWTON: {
                 return (temperature * (60.0/11.0)) + 32;
@@ -250,7 +250,7 @@ public class Temperature {
                 return temperature;
             }
             case ROMER: {
-                return (temperature - 7/5) * (32.0/21.0);
+                return (temperature - 7.5) * (32.0/21.0);
             }
             default: {
                 throw new IllegalArgumentException("The unit " + unit.name() + " is not supported by the getAsReaumur method.");
