@@ -303,7 +303,7 @@ public class Temperature {
      *         Returns an optional containing either this object or nothing if the specified TemperatureUnit is not
      *         supported.
      */
-    public Optional<Temperature> convertToUnit(final TemperatureUnit newUnit) {
+    public synchronized Optional<Temperature> convertToUnit(final TemperatureUnit newUnit) {
         // The unit must be changed after the temperature is converted as the conversion methods rely on the unit.
         switch (newUnit) {
             case CELSIUS: {
