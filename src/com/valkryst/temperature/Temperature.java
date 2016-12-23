@@ -2,6 +2,8 @@ package com.valkryst.temperature;
 
 import lombok.Getter;
 
+import java.util.Optional;
+
 public class Temperature {
     /** The unit of temperature. (Ex: Celsius, Kelvin) */
     @Getter private TemperatureUnit unit;
@@ -298,53 +300,54 @@ public class Temperature {
      *         The unit type (scale) to convert to.
      *
      * @return
-     *         Returns this object.
+     *         Returns an optional containing either this object or nothing if the specified TemperatureUnit is not
+     *         supported.
      */
-    public Temperature convertToUnit(final TemperatureUnit newUnit) {
+    public Optional<Temperature> convertToUnit(final TemperatureUnit newUnit) {
         // The unit must be changed after the temperature is converted as the conversion methods rely on the unit.
         switch (newUnit) {
             case CELSIUS: {
                 temperature = getAsCelsius();
                 unit = TemperatureUnit.CELSIUS;
-                return this;
+                return Optional.of(this);
             }
             case DELISLE: {
                 temperature = getAsDelisle();
                 unit = TemperatureUnit.DELISLE;
-                return this;
+                return Optional.of(this);
             }
             case FAHRENHEIT: {
                 temperature = getAsFahrenheit();
                 unit = TemperatureUnit.FAHRENHEIT;
-                return this;
+                return Optional.of(this);
             }
             case KELVIN: {
                 temperature = getAsKelvin();
                 unit = TemperatureUnit.KELVIN;
-                return this;
+                return Optional.of(this);
             }
             case NEWTON: {
                 temperature = getAsNewton();
                 unit = TemperatureUnit.NEWTON;
-                return this;
+                return Optional.of(this);
             }
             case RANKINE: {
                 temperature = getAsRankine();
                 unit = TemperatureUnit.RANKINE;
-                return this;
+                return Optional.of(this);
             }
             case REAUMUR: {
                 temperature = getAsReaumur();
                 unit = TemperatureUnit.REAUMUR;
-                return this;
+                return Optional.of(this);
             }
             case ROMER: {
                 temperature = getAsRomer();
                 unit = TemperatureUnit.ROMER;
-                return this;
+                return Optional.of(this);
             }
             default: {
-                throw new IllegalArgumentException("The unit " + unit.name() + " is not supported by the convertToCelsius method.");
+                return Optional.empty();
             }
         }
     }
