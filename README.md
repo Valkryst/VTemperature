@@ -67,8 +67,8 @@ methods can then be called on the object to get the temperature value in a diffe
     The initial temperature is 30.0°C.
     As Celsius:	    30.0
     As Delisle:	    105.0
-    As Fahrenheit:      86.0
-    As Kelvin:          303.15
+    As Fahrenheit:  86.0
+    As Kelvin:      303.15
     As Newton:	    9.9
     As Rankine:	    545.67
     As Reaumur:	    24.0
@@ -78,7 +78,7 @@ methods can then be called on the object to get the temperature value in a diffe
     
     As Celsius:	    30.0°C
     As Delisle:	    105.0°De
-    As Fahrenheit:	    86.0°F
+    As Fahrenheit:	86.0°F
     As Kelvin:	    303.15K
     As Newton:	    9.9°N
     As Rankine:	    545.67°Ra
