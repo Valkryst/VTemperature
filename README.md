@@ -65,22 +65,22 @@ methods can then be called on the object to get the temperature value in a diffe
 ##### Example - Output:
 
     The initial temperature is 30.0°C.
-    As Celsius:	30.0
-    As Delisle:	105.0
-    As Fahrenheit:  86.0
-    As Kelvin:      303.15
-    As Newton:	9.9
-    As Rankine:	545.67
-    As Reaumur:	24.0
-    As Romer:	23.25
+    As Celsius:	    30.0
+    As Delisle:	    105.0
+    As Fahrenheit:      86.0
+    As Kelvin:          303.15
+    As Newton:	    9.9
+    As Rankine:	    545.67
+    As Reaumur:	    24.0
+    As Romer:	    23.25
     
     
     
-    As Celsius:	30.0°C
-    As Delisle:	105.0°De
-    As Fahrenheit:	86.0°F
-    As Kelvin:	303.15K
-    As Newton:	9.9°N
-    As Rankine:	545.67°Ra
-    As Reaumur:	24.0°R
-    As Romer:	23.25°Rø
+    As Celsius:	    30.0°C
+    As Delisle:	    105.0°De
+    As Fahrenheit:	    86.0°F
+    As Kelvin:	    303.15K
+    As Newton:	    9.9°N
+    As Rankine:	    545.67°Ra
+    As Reaumur:	    24.0°R
+    As Romer:	    23.25°Rø
