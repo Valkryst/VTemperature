@@ -4,18 +4,31 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class TemperatureTest {
+    // Using the values of "Absolute Zero" as the temperatures. Taken from the following page:
+    // http://wiki.homedistiller.org/index.php/Temperature_conversion_formulas
+    private Temperature celsiusTemp;
+    private Temperature delisleTemp;
+    private Temperature fahrenheitTemp;
+    private Temperature kelvinTemp;
+    private Temperature newtonTemp;
+    private Temperature rankineTemp;
+    private Temperature reaumurTemp;
+    private Temperature romerTemp;
+
+    private void setTestData() {
+        celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
+        delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
+        fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
+        kelvinTemp = new Temperature(TemperatureUnit.KELVIN, 0);
+        newtonTemp = new Temperature(TemperatureUnit.NEWTON, -90.14);
+        rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
+        reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
+        romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+    }
+
     @Test
     public void getAsCelsius() {
-        // Using the values of "Absolute Zero" as the temperatures. Taken from the following page:
-        // http://wiki.homedistiller.org/index.php/Temperature_conversion_formulas
-        final Temperature celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
-        final Temperature delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
-        final Temperature fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
-        final Temperature kelvinTemp = new Temperature(TemperatureUnit.KELVIN, 0);
-        final Temperature newtonTemp = new Temperature(TemperatureUnit.NEWTON, -90.14);
-        final Temperature rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
-        final Temperature reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
-        final Temperature romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+        setTestData();
 
         final double celsiusResult = celsiusTemp.getAsCelsius();
         final double delisleResult = delisleTemp.getAsCelsius();
@@ -33,31 +46,22 @@ public class TemperatureTest {
         Assert.assertEquals(celsiusResult, kelvinResult, 0.02);
         Assert.assertEquals(celsiusResult, newtonResult, 0.02);
         Assert.assertEquals(celsiusResult, rankineResult, 0.02);
-        Assert.assertEquals(rankineResult, reaumurResult, 0.02);
+        Assert.assertEquals(celsiusResult, reaumurResult, 0.02);
         Assert.assertEquals(celsiusResult, romerResult, 0.02);
     }
 
     @Test
     public void getAsDelisle() {
-        // Using the values of "Absolute Zero" as the temperatures. Taken from the following page:
-        // http://wiki.homedistiller.org/index.php/Temperature_conversion_formulas
-        final Temperature celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
-        final Temperature delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
-        final Temperature fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
-        final Temperature kelvinTemp = new Temperature(TemperatureUnit.KELVIN, 0);
-        final Temperature newtonTemp = new Temperature(TemperatureUnit.NEWTON, -90.14);
-        final Temperature rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
-        final Temperature reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
-        final Temperature romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+        setTestData();
 
-        final double celsiusResult = celsiusTemp.getAsCelsius();
-        final double delisleResult = delisleTemp.getAsCelsius();
-        final double fahrenheitResult = fahrenheitTemp.getAsCelsius();
-        final double kelvinResult = kelvinTemp.getAsCelsius();
-        final double newtonResult = newtonTemp.getAsCelsius();
-        final double rankineResult = rankineTemp.getAsCelsius();
-        final double reaumurResult = reaumurTemp.getAsCelsius();
-        final double romerResult = romerTemp.getAsCelsius();
+        final double celsiusResult = celsiusTemp.getAsDelisle();
+        final double delisleResult = delisleTemp.getAsDelisle();
+        final double fahrenheitResult = fahrenheitTemp.getAsDelisle();
+        final double kelvinResult = kelvinTemp.getAsDelisle();
+        final double newtonResult = newtonTemp.getAsDelisle();
+        final double rankineResult = rankineTemp.getAsDelisle();
+        final double reaumurResult = reaumurTemp.getAsDelisle();
+        final double romerResult = romerTemp.getAsDelisle();
 
         // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
         Assert.assertEquals(delisleResult, celsiusResult, 0.02);
@@ -66,31 +70,22 @@ public class TemperatureTest {
         Assert.assertEquals(delisleResult, kelvinResult, 0.02);
         Assert.assertEquals(delisleResult, newtonResult, 0.02);
         Assert.assertEquals(delisleResult, rankineResult, 0.02);
-        Assert.assertEquals(rankineResult, reaumurResult, 0.02);
+        Assert.assertEquals(delisleResult, reaumurResult, 0.02);
         Assert.assertEquals(delisleResult, romerResult, 0.02);
     }
 
     @Test
     public void getAsFahrenheit() {
-        // Using the values of "Absolute Zero" as the temperatures. Taken from the following page:
-        // http://wiki.homedistiller.org/index.php/Temperature_conversion_formulas
-        final Temperature celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
-        final Temperature delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
-        final Temperature fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
-        final Temperature kelvinTemp = new Temperature(TemperatureUnit.KELVIN, 0);
-        final Temperature newtonTemp = new Temperature(TemperatureUnit.NEWTON, -90.14);
-        final Temperature rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
-        final Temperature reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
-        final Temperature romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+        setTestData();
 
-        final double celsiusResult = celsiusTemp.getAsCelsius();
-        final double delisleResult = delisleTemp.getAsCelsius();
-        final double fahrenheitResult = fahrenheitTemp.getAsCelsius();
-        final double kelvinResult = kelvinTemp.getAsCelsius();
-        final double newtonResult = newtonTemp.getAsCelsius();
-        final double rankineResult = rankineTemp.getAsCelsius();
-        final double reaumurResult = reaumurTemp.getAsCelsius();
-        final double romerResult = romerTemp.getAsCelsius();
+        final double celsiusResult = celsiusTemp.getAsFahrenheit();
+        final double delisleResult = delisleTemp.getAsFahrenheit();
+        final double fahrenheitResult = fahrenheitTemp.getAsFahrenheit();
+        final double kelvinResult = kelvinTemp.getAsFahrenheit();
+        final double newtonResult = newtonTemp.getAsFahrenheit();
+        final double rankineResult = rankineTemp.getAsFahrenheit();
+        final double reaumurResult = reaumurTemp.getAsFahrenheit();
+        final double romerResult = romerTemp.getAsFahrenheit();
 
         // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
         Assert.assertEquals(fahrenheitResult, celsiusResult, 0.02);
@@ -99,31 +94,22 @@ public class TemperatureTest {
         Assert.assertEquals(fahrenheitResult, kelvinResult, 0.02);
         Assert.assertEquals(fahrenheitResult, newtonResult, 0.02);
         Assert.assertEquals(fahrenheitResult, rankineResult, 0.02);
-        Assert.assertEquals(rankineResult, reaumurResult, 0.02);
+        Assert.assertEquals(fahrenheitResult, reaumurResult, 0.02);
         Assert.assertEquals(fahrenheitResult, romerResult, 0.02);
     }
 
     @Test
     public void getAsKelvin() {
-        // Using the values of "Absolute Zero" as the temperatures. Taken from the following page:
-        // http://wiki.homedistiller.org/index.php/Temperature_conversion_formulas
-        final Temperature celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
-        final Temperature delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
-        final Temperature fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
-        final Temperature kelvinTemp = new Temperature(TemperatureUnit.KELVIN, 0);
-        final Temperature newtonTemp = new Temperature(TemperatureUnit.NEWTON, -90.14);
-        final Temperature rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
-        final Temperature reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
-        final Temperature romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+        setTestData();
 
-        final double celsiusResult = celsiusTemp.getAsCelsius();
-        final double delisleResult = delisleTemp.getAsCelsius();
-        final double fahrenheitResult = fahrenheitTemp.getAsCelsius();
-        final double kelvinResult = kelvinTemp.getAsCelsius();
-        final double newtonResult = newtonTemp.getAsCelsius();
-        final double rankineResult = rankineTemp.getAsCelsius();
-        final double reaumurResult = reaumurTemp.getAsCelsius();
-        final double romerResult = romerTemp.getAsCelsius();
+        final double celsiusResult = celsiusTemp.getAsKelvin();
+        final double delisleResult = delisleTemp.getAsKelvin();
+        final double fahrenheitResult = fahrenheitTemp.getAsKelvin();
+        final double kelvinResult = kelvinTemp.getAsKelvin();
+        final double newtonResult = newtonTemp.getAsKelvin();
+        final double rankineResult = rankineTemp.getAsKelvin();
+        final double reaumurResult = reaumurTemp.getAsKelvin();
+        final double romerResult = romerTemp.getAsKelvin();
 
         // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
         Assert.assertEquals(kelvinResult, celsiusResult, 0.02);
@@ -132,31 +118,22 @@ public class TemperatureTest {
         Assert.assertEquals(kelvinResult, kelvinResult, 0.02);
         Assert.assertEquals(kelvinResult, newtonResult, 0.02);
         Assert.assertEquals(kelvinResult, rankineResult, 0.02);
-        Assert.assertEquals(rankineResult, reaumurResult, 0.02);
+        Assert.assertEquals(kelvinResult, reaumurResult, 0.02);
         Assert.assertEquals(kelvinResult, romerResult, 0.02);
     }
 
     @Test
     public void getAsNewton() {
-        // Using the values of "Absolute Zero" as the temperatures. Taken from the following page:
-        // http://wiki.homedistiller.org/index.php/Temperature_conversion_formulas
-        final Temperature celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
-        final Temperature delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
-        final Temperature fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
-        final Temperature kelvinTemp = new Temperature(TemperatureUnit.KELVIN, 0);
-        final Temperature newtonTemp = new Temperature(TemperatureUnit.NEWTON, -90.14);
-        final Temperature rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
-        final Temperature reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
-        final Temperature romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+        setTestData();
 
-        final double celsiusResult = celsiusTemp.getAsCelsius();
-        final double delisleResult = delisleTemp.getAsCelsius();
-        final double fahrenheitResult = fahrenheitTemp.getAsCelsius();
-        final double kelvinResult = kelvinTemp.getAsCelsius();
-        final double newtonResult = newtonTemp.getAsCelsius();
-        final double rankineResult = rankineTemp.getAsCelsius();
-        final double reaumurResult = reaumurTemp.getAsCelsius();
-        final double romerResult = romerTemp.getAsCelsius();
+        final double celsiusResult = celsiusTemp.getAsNewton();
+        final double delisleResult = delisleTemp.getAsNewton();
+        final double fahrenheitResult = fahrenheitTemp.getAsNewton();
+        final double kelvinResult = kelvinTemp.getAsNewton();
+        final double newtonResult = newtonTemp.getAsNewton();
+        final double rankineResult = rankineTemp.getAsNewton();
+        final double reaumurResult = reaumurTemp.getAsNewton();
+        final double romerResult = romerTemp.getAsNewton();
 
         // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
         Assert.assertEquals(newtonResult, celsiusResult, 0.02);
@@ -165,31 +142,22 @@ public class TemperatureTest {
         Assert.assertEquals(newtonResult, kelvinResult, 0.02);
         Assert.assertEquals(newtonResult, newtonResult, 0.02);
         Assert.assertEquals(newtonResult, rankineResult, 0.02);
-        Assert.assertEquals(rankineResult, reaumurResult, 0.02);
+        Assert.assertEquals(newtonResult, reaumurResult, 0.02);
         Assert.assertEquals(newtonResult, romerResult, 0.02);
     }
 
     @Test
     public void getAsRankine() {
-        // Using the values of "Absolute Zero" as the temperatures. Taken from the following page:
-        // http://wiki.homedistiller.org/index.php/Temperature_conversion_formulas
-        final Temperature celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
-        final Temperature delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
-        final Temperature fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
-        final Temperature kelvinTemp = new Temperature(TemperatureUnit.KELVIN, 0);
-        final Temperature newtonTemp = new Temperature(TemperatureUnit.NEWTON, -90.14);
-        final Temperature rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
-        final Temperature reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
-        final Temperature romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+        setTestData();
 
-        final double celsiusResult = celsiusTemp.getAsCelsius();
-        final double delisleResult = delisleTemp.getAsCelsius();
-        final double fahrenheitResult = fahrenheitTemp.getAsCelsius();
-        final double kelvinResult = kelvinTemp.getAsCelsius();
-        final double newtonResult = newtonTemp.getAsCelsius();
-        final double rankineResult = rankineTemp.getAsCelsius();
-        final double reaumurResult = reaumurTemp.getAsCelsius();
-        final double romerResult = romerTemp.getAsCelsius();
+        final double celsiusResult = celsiusTemp.getAsRankine();
+        final double delisleResult = delisleTemp.getAsRankine();
+        final double fahrenheitResult = fahrenheitTemp.getAsRankine();
+        final double kelvinResult = kelvinTemp.getAsRankine();
+        final double newtonResult = newtonTemp.getAsRankine();
+        final double rankineResult = rankineTemp.getAsRankine();
+        final double reaumurResult = reaumurTemp.getAsRankine();
+        final double romerResult = romerTemp.getAsRankine();
 
         // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
         Assert.assertEquals(rankineResult, celsiusResult, 0.02);
@@ -204,25 +172,16 @@ public class TemperatureTest {
 
     @Test
     public void getAsReaumur() {
-        // Using the values of "Absolute Zero" as the temperatures. Taken from the following page:
-        // http://wiki.homedistiller.org/index.php/Temperature_conversion_formulas
-        final Temperature celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
-        final Temperature delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
-        final Temperature fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
-        final Temperature kelvinTemp = new Temperature(TemperatureUnit.KELVIN, 0);
-        final Temperature newtonTemp = new Temperature(TemperatureUnit.NEWTON, -90.14);
-        final Temperature rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
-        final Temperature reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
-        final Temperature romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+        setTestData();
 
-        final double celsiusResult = celsiusTemp.getAsCelsius();
-        final double delisleResult = delisleTemp.getAsCelsius();
-        final double fahrenheitResult = fahrenheitTemp.getAsCelsius();
-        final double kelvinResult = kelvinTemp.getAsCelsius();
-        final double newtonResult = newtonTemp.getAsCelsius();
-        final double rankineResult = rankineTemp.getAsCelsius();
-        final double reaumurResult = reaumurTemp.getAsCelsius();
-        final double romerResult = romerTemp.getAsCelsius();
+        final double celsiusResult = celsiusTemp.getAsReaumur();
+        final double delisleResult = delisleTemp.getAsReaumur();
+        final double fahrenheitResult = fahrenheitTemp.getAsReaumur();
+        final double kelvinResult = kelvinTemp.getAsReaumur();
+        final double newtonResult = newtonTemp.getAsReaumur();
+        final double rankineResult = rankineTemp.getAsReaumur();
+        final double reaumurResult = reaumurTemp.getAsReaumur();
+        final double romerResult = romerTemp.getAsReaumur();
 
         // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
         Assert.assertEquals(reaumurResult, celsiusResult, 0.02);
@@ -237,25 +196,16 @@ public class TemperatureTest {
 
     @Test
     public void getAsRomer() {
-        // Using the values of "Absolute Zero" as the temperatures. Taken from the following page:
-        // http://wiki.homedistiller.org/index.php/Temperature_conversion_formulas
-        final Temperature celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
-        final Temperature delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
-        final Temperature fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
-        final Temperature kelvinTemp = new Temperature(TemperatureUnit.KELVIN, 0);
-        final Temperature newtonTemp = new Temperature(TemperatureUnit.NEWTON, -90.14);
-        final Temperature rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
-        final Temperature reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
-        final Temperature romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+        setTestData();
 
-        final double celsiusResult = celsiusTemp.getAsCelsius();
-        final double delisleResult = delisleTemp.getAsCelsius();
-        final double fahrenheitResult = fahrenheitTemp.getAsCelsius();
-        final double kelvinResult = kelvinTemp.getAsCelsius();
-        final double newtonResult = newtonTemp.getAsCelsius();
-        final double rankineResult = rankineTemp.getAsCelsius();
-        final double reaumurResult = reaumurTemp.getAsCelsius();
-        final double romerResult = romerTemp.getAsCelsius();
+        final double celsiusResult = celsiusTemp.getAsRomer();
+        final double delisleResult = delisleTemp.getAsRomer();
+        final double fahrenheitResult = fahrenheitTemp.getAsRomer();
+        final double kelvinResult = kelvinTemp.getAsRomer();
+        final double newtonResult = newtonTemp.getAsRomer();
+        final double rankineResult = rankineTemp.getAsRomer();
+        final double reaumurResult = reaumurTemp.getAsRomer();
+        final double romerResult = romerTemp.getAsRomer();
 
         // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
         Assert.assertEquals(romerResult, celsiusResult, 0.02);
@@ -270,16 +220,7 @@ public class TemperatureTest {
 
     @Test
     public void convertToCelsius() {
-        // Using the values of "Absolute Zero" as the temperatures. Taken from the following page:
-        // http://wiki.homedistiller.org/index.php/Temperature_conversion_formulas
-        final Temperature celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
-        final Temperature delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
-        final Temperature fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
-        final Temperature kelvinTemp = new Temperature(TemperatureUnit.KELVIN, 0);
-        final Temperature newtonTemp = new Temperature(TemperatureUnit.NEWTON, -90.14);
-        final Temperature rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
-        final Temperature reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
-        final Temperature romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+        setTestData();
 
         Assert.assertEquals(celsiusTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.CELSIUS).get().getTemperature(), 0.2);
         Assert.assertEquals(celsiusTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.CELSIUS).get().getTemperature(), 0.2);
@@ -293,16 +234,7 @@ public class TemperatureTest {
 
     @Test
     public void convertToDelisle() {
-        // Using the values of "Absolute Zero" as the temperatures. Taken from the following page:
-        // http://wiki.homedistiller.org/index.php/Temperature_conversion_formulas
-        final Temperature celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
-        final Temperature delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
-        final Temperature fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
-        final Temperature kelvinTemp = new Temperature(TemperatureUnit.KELVIN, 0);
-        final Temperature newtonTemp = new Temperature(TemperatureUnit.NEWTON, -90.14);
-        final Temperature rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
-        final Temperature reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
-        final Temperature romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+        setTestData();
 
         Assert.assertEquals(delisleTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.DELISLE).get().getTemperature(), 0.2);
         Assert.assertEquals(delisleTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.DELISLE).get().getTemperature(), 0.2);
@@ -316,16 +248,7 @@ public class TemperatureTest {
 
     @Test
     public void convertToFahrenheit() {
-        // Using the values of "Absolute Zero" as the temperatures. Taken from the following page:
-        // http://wiki.homedistiller.org/index.php/Temperature_conversion_formulas
-        final Temperature celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
-        final Temperature delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
-        final Temperature fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
-        final Temperature kelvinTemp = new Temperature(TemperatureUnit.KELVIN, 0);
-        final Temperature newtonTemp = new Temperature(TemperatureUnit.NEWTON, -90.14);
-        final Temperature rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
-        final Temperature reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
-        final Temperature romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+        setTestData();
 
         Assert.assertEquals(fahrenheitTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.FAHRENHEIT).get().getTemperature(), 0.2);
         Assert.assertEquals(fahrenheitTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.FAHRENHEIT).get().getTemperature(), 0.2);
@@ -339,16 +262,7 @@ public class TemperatureTest {
 
     @Test
     public void convertToKelvin() {
-        // Using the values of "Absolute Zero" as the temperatures. Taken from the following page:
-        // http://wiki.homedistiller.org/index.php/Temperature_conversion_formulas
-        final Temperature celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
-        final Temperature delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
-        final Temperature fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
-        final Temperature kelvinTemp = new Temperature(TemperatureUnit.KELVIN, 0);
-        final Temperature newtonTemp = new Temperature(TemperatureUnit.NEWTON, -90.14);
-        final Temperature rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
-        final Temperature reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
-        final Temperature romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+        setTestData();
 
         Assert.assertEquals(kelvinTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.KELVIN).get().getTemperature(), 0.2);
         Assert.assertEquals(kelvinTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.KELVIN).get().getTemperature(), 0.2);
@@ -362,16 +276,7 @@ public class TemperatureTest {
 
     @Test
     public void convertToNewton() {
-        // Using the values of "Absolute Zero" as the temperatures. Taken from the following page:
-        // http://wiki.homedistiller.org/index.php/Temperature_conversion_formulas
-        final Temperature celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
-        final Temperature delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
-        final Temperature fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
-        final Temperature kelvinTemp = new Temperature(TemperatureUnit.KELVIN, 0);
-        final Temperature newtonTemp = new Temperature(TemperatureUnit.NEWTON, -90.14);
-        final Temperature rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
-        final Temperature reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
-        final Temperature romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+        setTestData();
 
         Assert.assertEquals(newtonTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.NEWTON).get().getTemperature(), 0.2);
         Assert.assertEquals(newtonTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.NEWTON).get().getTemperature(), 0.2);
@@ -385,16 +290,7 @@ public class TemperatureTest {
 
     @Test
     public void convertToRankine() {
-        // Using the values of "Absolute Zero" as the temperatures. Taken from the following page:
-        // http://wiki.homedistiller.org/index.php/Temperature_conversion_formulas
-        final Temperature celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
-        final Temperature delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
-        final Temperature fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
-        final Temperature kelvinTemp = new Temperature(TemperatureUnit.KELVIN, 0);
-        final Temperature newtonTemp = new Temperature(TemperatureUnit.NEWTON, -90.14);
-        final Temperature rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
-        final Temperature reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
-        final Temperature romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+        setTestData();
 
         Assert.assertEquals(rankineTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.RANKINE).get().getTemperature(), 0.2);
         Assert.assertEquals(rankineTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.RANKINE).get().getTemperature(), 0.2);
@@ -408,16 +304,7 @@ public class TemperatureTest {
 
     @Test
     public void convertToReaumur() {
-        // Using the values of "Absolute Zero" as the temperatures. Taken from the following page:
-        // http://wiki.homedistiller.org/index.php/Temperature_conversion_formulas
-        final Temperature celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
-        final Temperature delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
-        final Temperature fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
-        final Temperature kelvinTemp = new Temperature(TemperatureUnit.KELVIN, 0);
-        final Temperature newtonTemp = new Temperature(TemperatureUnit.NEWTON, -90.14);
-        final Temperature rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
-        final Temperature reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
-        final Temperature romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+        setTestData();
 
         Assert.assertEquals(reaumurTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.REAUMUR).get().getTemperature(), 0.2);
         Assert.assertEquals(reaumurTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.REAUMUR).get().getTemperature(), 0.2);
@@ -431,16 +318,7 @@ public class TemperatureTest {
 
     @Test
     public void convertToRomer() {
-        // Using the values of "Absolute Zero" as the temperatures. Taken from the following page:
-        // http://wiki.homedistiller.org/index.php/Temperature_conversion_formulas
-        final Temperature celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
-        final Temperature delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
-        final Temperature fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
-        final Temperature kelvinTemp = new Temperature(TemperatureUnit.KELVIN, 0);
-        final Temperature newtonTemp = new Temperature(TemperatureUnit.NEWTON, -90.14);
-        final Temperature rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
-        final Temperature reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
-        final Temperature romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+        setTestData();
 
         Assert.assertEquals(romerTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.ROMER).get().getTemperature(), 0.2);
         Assert.assertEquals(romerTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.ROMER).get().getTemperature(), 0.2);
