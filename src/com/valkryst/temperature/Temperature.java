@@ -1,14 +1,12 @@
 package com.valkryst.temperature;
 
-import lombok.Getter;
-
 import java.util.Optional;
 
 public class Temperature {
     /** The unit of temperature. (Ex: Celsius, Kelvin) */
-    @Getter private TemperatureUnit unit;
+    private TemperatureUnit unit;
     /** The temperature. */
-    @Getter private double temperature;
+    private double temperature;
 
     /**
      * Constructs a new Temperature.
@@ -25,12 +23,12 @@ public class Temperature {
     }
 
     @Override
-    public String toString() {
+    public synchronized String toString() {
         return temperature + TemperatureUnit.getSymbol(unit);
     }
 
     /** @return The temperature converted to the Celsius scale. */
-    public double getAsCelsius() {
+    public synchronized double getAsCelsius() {
         switch (unit) {
             case CELSIUS: {
                 return temperature;
@@ -63,7 +61,7 @@ public class Temperature {
     }
 
     /** @return The temperature converted to the Delisle scale. */
-    public double getAsDelisle() {
+    public synchronized double getAsDelisle() {
         switch (unit) {
             case CELSIUS: {
                 return (100 - temperature) * (3.0/2.0);
@@ -96,7 +94,7 @@ public class Temperature {
     }
 
     /** @return The temperature converted to the Fahrenheit scale. */
-    public double getAsFahrenheit() {
+    public synchronized double getAsFahrenheit() {
         switch (unit) {
             case CELSIUS: {
                 return (temperature * (9.0/5.0)) + 32;
@@ -129,7 +127,7 @@ public class Temperature {
     }
 
     /** @return The temperature converted to the Kelvin scale. */
-    public double getAsKelvin() {
+    public synchronized double getAsKelvin() {
         switch (unit) {
             case CELSIUS: {
                 return temperature + 273.15;
@@ -162,7 +160,7 @@ public class Temperature {
     }
 
     /** @return The temperature converted to the Newton scale. */
-    public double getAsNewton() {
+    public synchronized double getAsNewton() {
         switch (unit) {
             case CELSIUS: {
                 return temperature * (33.0/100.0);
@@ -195,7 +193,7 @@ public class Temperature {
     }
 
     /** @return The temperature converted to the Rankine scale. */
-    public double getAsRankine() {
+    public synchronized double getAsRankine() {
         switch (unit) {
             case CELSIUS: {
                 return (temperature + 273.15) * (9.0/5.0);
@@ -228,7 +226,7 @@ public class Temperature {
     }
 
     /** @return The temperature converted to the Reaumur scale. */
-    public double getAsReaumur() {
+    public synchronized double getAsReaumur() {
         switch (unit) {
             case CELSIUS: {
                 return temperature * (4.0/5.0);
@@ -261,7 +259,7 @@ public class Temperature {
     }
 
     /** @return The temperature converted to the Romer scale. */
-    public double getAsRomer() {
+    public synchronized double getAsRomer() {
         switch (unit) {
             case CELSIUS: {
                 return (temperature * (21.0/40.0)) + 7.5;
@@ -350,5 +348,15 @@ public class Temperature {
                 return Optional.empty();
             }
         }
+    }
+
+    /** @return The unit of temperature. */
+    public synchronized TemperatureUnit getUnit() {
+        return unit;
+    }
+
+    /** @return The temperature. */
+    public synchronized double getTemperature() {
+        return temperature;
     }
 }
