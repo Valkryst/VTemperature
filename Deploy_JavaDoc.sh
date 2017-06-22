@@ -3,22 +3,22 @@
 # Display Repo:
 echo -e "Repo Slug:"
 echo -e "\tExpected:\tValkryst/VTemperature"
-echo -e "\tActual:\t$TRAVIS_REPO_SLUG\n"
+echo -e "\tActual: \t$TRAVIS_REPO_SLUG\n"
 
 # Display JDK Version:
 echo -e "JDK Version:"
 echo -e "\tExpected:\toraclejdk8"
-echo -e "\tActual:\t$TRAVIS_JDK_VERSION\n"
+echo -e "\tActual: \t$TRAVIS_JDK_VERSION\n"
 
 # Display 'Is Pull Request':
 echo -e "Is Pull Request:"
 echo -e "\tExpected:\tfalse"
-echo -e "\tActual:\t$TRAVIS_PULL_REQUEST\n"
+echo -e "\tActual: \t$TRAVIS_PULL_REQUEST\n"
 
 # Display Branch:
 echo -e "Branch:"
 echo -e "\tExpected:\tfalse"
-echo -e "\tActual:\t$TRAVIS_BRANCH\n"
+echo -e "\tActual: \t$TRAVIS_BRANCH\n"
 
 if [ "$TRAVIS_REPO_SLUG" == "Valkryst/VTemperature" ] &&
    [ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ] &&
