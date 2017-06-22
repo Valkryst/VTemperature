@@ -32,6 +32,12 @@ You can now use the VTemperature in your project.
 Construct a new Temperature object specifying both the unit type and temperature value, various conversion
 methods can then be called on the object to get the temperature value in a different unit type (scale).
 
+### JavaDoc Documentation:
+
+Whenever a Travis CI build passes, the JavaDocs are auto-generated and made available at the following link.
+
+https://valkryst.github.io/VTemperature/
+
 ##### Example - Code:
 
 ```Java
