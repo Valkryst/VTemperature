@@ -6,39 +6,26 @@ Please refer to the LICENSE file for additional information.
 
 ---
 
-![](https://travis-ci.org/Valkryst/VTemperature.svg?branch=master) [![codecov](https://codecov.io/gh/Valkryst/VTemperature/branch/master/graph/badge.svg)](https://codecov.io/gh/Valkryst/VTemperature)
+![](https://travis-ci.org/Valkryst/VTemperature.svg?branch=master) [![codecov](https://codecov.io/gh/Valkryst/VTemperature/branch/master/graph/badge.svg)](https://codecov.io/gh/Valkryst/VTemperature) [![Release](https://jitpack.io/v/Valkryst/VTemperature.svg)](https://jitpack.io/#Valkryst/VTemperature)
 
-## How to Setup:
+## Jar Files & Maven
 
-1. Clone the project from GitHub.
-2. Open your project in IntelliJ.
-3. Open the *Project Structure* menu. (S + ALT + CTRL + SHIFT)
-4. Enter the *Modules* subsection.
-5. Click the green "+" at the top of the window.
-6. Select *Import Module*.
-7. Navigate to the cloned project and double-click on *pom.xml*.
-8. Click on the name of your project in the *Modules* subsection.
-9. Enter the *Dependencies* tab of your project.
-10. Click on the green "+" at the right-edge of the window.
-11. Click *Module Dependency...*.
-12. Select *VTemperature*.
+To use this project as a Maven dependency, click on the JitPack badge [![Release](https://jitpack.io/v/Valkryst/VTemperature.svg)](https://jitpack.io/#Valkryst/VTemperature), select a version, click the "Get it!" button, and then follow the instructions.
 
-You can now use the VTemperature in your project.
+If you would rather use a Jar file, then you can find the Jars on the [releases](https://github.com/Valkryst/VTemperature/releases) page.
 
----
+## JavaDoc Documentation:
+
+Whenever a Travis CI build passes, the JavaDocs are auto-generated and made available at the following link.
+
+https://valkryst.github.io/VTemperature/
 
 ### How to Use:
 
 Construct a new Temperature object specifying both the unit type and temperature value, various conversion
 methods can then be called on the object to get the temperature value in a different unit type (scale).
 
-### JavaDoc Documentation:
-
-Whenever a Travis CI build passes, the JavaDocs are auto-generated and made available at the following link.
-
-https://valkryst.github.io/VTemperature/
-
-##### Example - Code:
+### Example - Code:
 
 ```Java
 public class Test {
@@ -72,7 +59,7 @@ public class Test {
 }
 ```
 
-##### Example - Output:
+### Example - Output:
 
     The initial temperature is 30.0°C.
     As Celsius:	    30.0
