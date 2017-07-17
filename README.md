@@ -8,8 +8,6 @@ Please refer to the LICENSE file for additional information.
 
 [![MIT License](https://img.shields.io/badge/license-MIT_License-green.svg)](https://github.com/Valkryst/VTemperature/blob/master/LICENSE) ![](https://travis-ci.org/Valkryst/VTemperature.svg?branch=master) [![codecov](https://codecov.io/gh/Valkryst/VTemperature/branch/master/graph/badge.svg)](https://codecov.io/gh/Valkryst/VTemperature) [![Release](https://jitpack.io/v/Valkryst/VTemperature.svg)](https://jitpack.io/#Valkryst/VTemperature)
 
-[![Dependency Status](https://www.versioneye.com/user/projects/596d061c368b0800548bc397/badge.svg)](https://www.versioneye.com/user/projects/596d061c368b0800548bc397)
-
 ## Jar Files & Maven
 
 To use this project as a Maven dependency, click on the JitPack badge [![Release](https://jitpack.io/v/Valkryst/VTemperature.svg)](https://jitpack.io/#Valkryst/VTemperature), select a version, click the "Get it!" button, and then follow the instructions.
