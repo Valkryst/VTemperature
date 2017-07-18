@@ -36,15 +36,6 @@ public class TemperatureTest {
         rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
         reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
         romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
-
-        celsiusResult = celsiusTemp.getAsDelisle();
-        delisleResult = delisleTemp.getAsDelisle();
-        fahrenheitResult = fahrenheitTemp.getAsDelisle();
-        kelvinResult = kelvinTemp.getAsDelisle();
-        newtonResult = newtonTemp.getAsDelisle();
-        rankineResult = rankineTemp.getAsDelisle();
-        reaumurResult = reaumurTemp.getAsDelisle();
-        romerResult = romerTemp.getAsDelisle();
     }
 
     @Test
@@ -61,106 +52,126 @@ public class TemperatureTest {
 
     @Test
     public void testGetAsCelsius() {
-        // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
-        Assert.assertEquals(celsiusResult, celsiusResult, 0.02);
-        Assert.assertEquals(celsiusResult, delisleResult, 0.02);
-        Assert.assertEquals(celsiusResult, fahrenheitResult, 0.02);
-        Assert.assertEquals(celsiusResult, kelvinResult, 0.02);
-        Assert.assertEquals(celsiusResult, newtonResult, 0.02);
-        Assert.assertEquals(celsiusResult, rankineResult, 0.02);
-        Assert.assertEquals(celsiusResult, reaumurResult, 0.02);
-        Assert.assertEquals(celsiusResult, romerResult, 0.02);
+        celsiusResult = celsiusTemp.getAsCelsius();
+        delisleResult = delisleTemp.getAsCelsius();
+        fahrenheitResult = fahrenheitTemp.getAsCelsius();
+        kelvinResult = kelvinTemp.getAsCelsius();
+        newtonResult = newtonTemp.getAsCelsius();
+        rankineResult = rankineTemp.getAsCelsius();
+        reaumurResult = reaumurTemp.getAsCelsius();
+        romerResult = romerTemp.getAsCelsius();
+
+        testGetAs(celsiusResult);
     }
 
     @Test
     public void testGetAsDelisle() {
-        // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
-        Assert.assertEquals(delisleResult, celsiusResult, 0.02);
-        Assert.assertEquals(delisleResult, delisleResult, 0.02);
-        Assert.assertEquals(delisleResult, fahrenheitResult, 0.02);
-        Assert.assertEquals(delisleResult, kelvinResult, 0.02);
-        Assert.assertEquals(delisleResult, newtonResult, 0.02);
-        Assert.assertEquals(delisleResult, rankineResult, 0.02);
-        Assert.assertEquals(delisleResult, reaumurResult, 0.02);
-        Assert.assertEquals(delisleResult, romerResult, 0.02);
+        celsiusResult = celsiusTemp.getAsDelisle();
+        delisleResult = delisleTemp.getAsDelisle();
+        fahrenheitResult = fahrenheitTemp.getAsDelisle();
+        kelvinResult = kelvinTemp.getAsDelisle();
+        newtonResult = newtonTemp.getAsDelisle();
+        rankineResult = rankineTemp.getAsDelisle();
+        reaumurResult = reaumurTemp.getAsDelisle();
+        romerResult = romerTemp.getAsDelisle();
+
+        testGetAs(delisleResult);
     }
 
     @Test
     public void testGetAsFahrenheit() {
-        // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
-        Assert.assertEquals(fahrenheitResult, celsiusResult, 0.02);
-        Assert.assertEquals(fahrenheitResult, delisleResult, 0.02);
-        Assert.assertEquals(fahrenheitResult, fahrenheitResult, 0.02);
-        Assert.assertEquals(fahrenheitResult, kelvinResult, 0.02);
-        Assert.assertEquals(fahrenheitResult, newtonResult, 0.02);
-        Assert.assertEquals(fahrenheitResult, rankineResult, 0.02);
-        Assert.assertEquals(fahrenheitResult, reaumurResult, 0.02);
-        Assert.assertEquals(fahrenheitResult, romerResult, 0.02);
+        celsiusResult = celsiusTemp.getAsFahrenheit();
+        delisleResult = delisleTemp.getAsFahrenheit();
+        fahrenheitResult = fahrenheitTemp.getAsFahrenheit();
+        kelvinResult = kelvinTemp.getAsFahrenheit();
+        newtonResult = newtonTemp.getAsFahrenheit();
+        rankineResult = rankineTemp.getAsFahrenheit();
+        reaumurResult = reaumurTemp.getAsFahrenheit();
+        romerResult = romerTemp.getAsFahrenheit();
+
+        testGetAs(fahrenheitResult);
     }
 
     @Test
     public void testGetAsKelvin() {
-        // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
-        Assert.assertEquals(kelvinResult, celsiusResult, 0.02);
-        Assert.assertEquals(kelvinResult, delisleResult, 0.02);
-        Assert.assertEquals(kelvinResult, fahrenheitResult, 0.02);
-        Assert.assertEquals(kelvinResult, kelvinResult, 0.02);
-        Assert.assertEquals(kelvinResult, newtonResult, 0.02);
-        Assert.assertEquals(kelvinResult, rankineResult, 0.02);
-        Assert.assertEquals(kelvinResult, reaumurResult, 0.02);
-        Assert.assertEquals(kelvinResult, romerResult, 0.02);
+        celsiusResult = celsiusTemp.getAsKelvin();
+        delisleResult = delisleTemp.getAsKelvin();
+        fahrenheitResult = fahrenheitTemp.getAsKelvin();
+        kelvinResult = kelvinTemp.getAsKelvin();
+        newtonResult = newtonTemp.getAsKelvin();
+        rankineResult = rankineTemp.getAsKelvin();
+        reaumurResult = reaumurTemp.getAsKelvin();
+        romerResult = romerTemp.getAsKelvin();
+
+        testGetAs(kelvinResult);
     }
 
     @Test
     public void testGetAsNewton() {
-        // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
-        Assert.assertEquals(newtonResult, celsiusResult, 0.02);
-        Assert.assertEquals(newtonResult, delisleResult, 0.02);
-        Assert.assertEquals(newtonResult, fahrenheitResult, 0.02);
-        Assert.assertEquals(newtonResult, kelvinResult, 0.02);
-        Assert.assertEquals(newtonResult, newtonResult, 0.02);
-        Assert.assertEquals(newtonResult, rankineResult, 0.02);
-        Assert.assertEquals(newtonResult, reaumurResult, 0.02);
-        Assert.assertEquals(newtonResult, romerResult, 0.02);
+        celsiusResult = celsiusTemp.getAsNewton();
+        delisleResult = delisleTemp.getAsNewton();
+        fahrenheitResult = fahrenheitTemp.getAsNewton();
+        kelvinResult = kelvinTemp.getAsNewton();
+        newtonResult = newtonTemp.getAsNewton();
+        rankineResult = rankineTemp.getAsNewton();
+        reaumurResult = reaumurTemp.getAsNewton();
+        romerResult = romerTemp.getAsNewton();
+
+        testGetAs(newtonResult);
     }
 
     @Test
     public void testGetAsRankine() {
-        // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
-        Assert.assertEquals(rankineResult, celsiusResult, 0.02);
-        Assert.assertEquals(rankineResult, delisleResult, 0.02);
-        Assert.assertEquals(rankineResult, fahrenheitResult, 0.02);
-        Assert.assertEquals(rankineResult, kelvinResult, 0.02);
-        Assert.assertEquals(rankineResult, newtonResult, 0.02);
-        Assert.assertEquals(rankineResult, rankineResult, 0.02);
-        Assert.assertEquals(rankineResult, reaumurResult, 0.02);
-        Assert.assertEquals(rankineResult, romerResult, 0.02);
+        celsiusResult = celsiusTemp.getAsRankine();
+        delisleResult = delisleTemp.getAsRankine();
+        fahrenheitResult = fahrenheitTemp.getAsRankine();
+        kelvinResult = kelvinTemp.getAsRankine();
+        newtonResult = newtonTemp.getAsRankine();
+        rankineResult = rankineTemp.getAsRankine();
+        reaumurResult = reaumurTemp.getAsRankine();
+        romerResult = romerTemp.getAsRankine();
+
+        testGetAs(rankineResult);
     }
 
     @Test
     public void testGetAsReaumur() {
-        // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
-        Assert.assertEquals(reaumurResult, celsiusResult, 0.02);
-        Assert.assertEquals(reaumurResult, delisleResult, 0.02);
-        Assert.assertEquals(reaumurResult, fahrenheitResult, 0.02);
-        Assert.assertEquals(reaumurResult, kelvinResult, 0.02);
-        Assert.assertEquals(reaumurResult, newtonResult, 0.02);
-        Assert.assertEquals(reaumurResult, rankineResult, 0.02);
-        Assert.assertEquals(reaumurResult, reaumurResult, 0.02);
-        Assert.assertEquals(reaumurResult, romerResult, 0.02);
+        celsiusResult = celsiusTemp.getAsReaumur();
+        delisleResult = delisleTemp.getAsReaumur();
+        fahrenheitResult = fahrenheitTemp.getAsReaumur();
+        kelvinResult = kelvinTemp.getAsReaumur();
+        newtonResult = newtonTemp.getAsReaumur();
+        rankineResult = rankineTemp.getAsReaumur();
+        reaumurResult = reaumurTemp.getAsReaumur();
+        romerResult = romerTemp.getAsReaumur();
+
+        testGetAs(reaumurResult);
     }
 
     @Test
     public void testGetAsRomer() {
+        celsiusResult = celsiusTemp.getAsRomer();
+        delisleResult = delisleTemp.getAsRomer();
+        fahrenheitResult = fahrenheitTemp.getAsRomer();
+        kelvinResult = kelvinTemp.getAsRomer();
+        newtonResult = newtonTemp.getAsRomer();
+        rankineResult = rankineTemp.getAsRomer();
+        reaumurResult = reaumurTemp.getAsRomer();
+        romerResult = romerTemp.getAsRomer();
+
+        testGetAs(romerResult);
+    }
+
+    private void testGetAs(final double expectedResult) {
         // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
-        Assert.assertEquals(romerResult, celsiusResult, 0.02);
-        Assert.assertEquals(romerResult, delisleResult, 0.02);
-        Assert.assertEquals(romerResult, fahrenheitResult, 0.02);
-        Assert.assertEquals(romerResult, kelvinResult, 0.02);
-        Assert.assertEquals(romerResult, newtonResult, 0.02);
-        Assert.assertEquals(romerResult, rankineResult, 0.02);
-        Assert.assertEquals(romerResult, reaumurResult, 0.02);
-        Assert.assertEquals(romerResult, romerResult, 0.02);
+        Assert.assertEquals(expectedResult, celsiusResult, 0.02);
+        Assert.assertEquals(expectedResult, delisleResult, 0.02);
+        Assert.assertEquals(expectedResult, fahrenheitResult, 0.02);
+        Assert.assertEquals(expectedResult, kelvinResult, 0.02);
+        Assert.assertEquals(expectedResult, newtonResult, 0.02);
+        Assert.assertEquals(expectedResult, rankineResult, 0.02);
+        Assert.assertEquals(expectedResult, reaumurResult, 0.02);
+        Assert.assertEquals(expectedResult, romerResult, 0.02);
     }
 
     @Test(expected=NullPointerException.class)
