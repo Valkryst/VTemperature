@@ -1,6 +1,6 @@
 package com.valkryst.temperature;
 
-import java.util.Optional;
+import java.util.Objects;
 
 public class Temperature {
     /** The unit of temperature. (Ex: Celsius, Kelvin) */
@@ -16,8 +16,13 @@ public class Temperature {
      *
      * @param temperature
      *         The temperature.
+     *
+     * @throws NullPointerException
+     *         If the unit is null.
      */
     public Temperature(final TemperatureUnit unit, final double temperature) {
+        Objects.requireNonNull(unit);
+
         this.unit = unit;
         this.temperature = temperature;
     }
@@ -298,56 +303,59 @@ public class Temperature {
      *         The unit type (scale) to convert to.
      *
      * @return
-     *         Returns an optional containing either this object or nothing if the specified TemperatureUnit is not
-     *         supported.
+     *         This
+     *
+     * @throws NullPointerException
+     *         If the new unit is null.
      */
-    public synchronized Optional<Temperature> convertToUnit(final TemperatureUnit newUnit) {
+    public synchronized Temperature convertToUnit(final TemperatureUnit newUnit) {
+        Objects.requireNonNull(newUnit);
+        
         // The unit must be changed after the temperature is converted as the conversion methods rely on the unit.
         switch (newUnit) {
             case CELSIUS: {
                 temperature = getAsCelsius();
                 unit = TemperatureUnit.CELSIUS;
-                return Optional.of(this);
+                break;
             }
             case DELISLE: {
                 temperature = getAsDelisle();
                 unit = TemperatureUnit.DELISLE;
-                return Optional.of(this);
+                break;
             }
             case FAHRENHEIT: {
                 temperature = getAsFahrenheit();
                 unit = TemperatureUnit.FAHRENHEIT;
-                return Optional.of(this);
+                break;
             }
             case KELVIN: {
                 temperature = getAsKelvin();
                 unit = TemperatureUnit.KELVIN;
-                return Optional.of(this);
+                break;
             }
             case NEWTON: {
                 temperature = getAsNewton();
                 unit = TemperatureUnit.NEWTON;
-                return Optional.of(this);
+                break;
             }
             case RANKINE: {
                 temperature = getAsRankine();
                 unit = TemperatureUnit.RANKINE;
-                return Optional.of(this);
+                break;
             }
             case REAUMUR: {
                 temperature = getAsReaumur();
                 unit = TemperatureUnit.REAUMUR;
-                return Optional.of(this);
+                break;
             }
             case ROMER: {
                 temperature = getAsRomer();
                 unit = TemperatureUnit.ROMER;
-                return Optional.of(this);
-            }
-            default: {
-                return Optional.empty();
+                break;
             }
         }
+
+        return this;
     }
 
     /** @return The unit of temperature. */
