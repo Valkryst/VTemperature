@@ -16,6 +16,16 @@ public class TemperatureTest {
     private Temperature reaumurTemp;
     private Temperature romerTemp;
 
+
+    private double celsiusResult;
+    private double delisleResult;
+    private double fahrenheitResult;
+    private double kelvinResult;
+    private double newtonResult;
+    private double rankineResult;
+    private double reaumurResult;
+    private double romerResult;
+
     @Before
     public void initializeTestData() {
         celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
@@ -26,6 +36,15 @@ public class TemperatureTest {
         rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
         reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
         romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+
+        celsiusResult = celsiusTemp.getAsDelisle();
+        delisleResult = delisleTemp.getAsDelisle();
+        fahrenheitResult = fahrenheitTemp.getAsDelisle();
+        kelvinResult = kelvinTemp.getAsDelisle();
+        newtonResult = newtonTemp.getAsDelisle();
+        rankineResult = rankineTemp.getAsDelisle();
+        reaumurResult = reaumurTemp.getAsDelisle();
+        romerResult = romerTemp.getAsDelisle();
     }
 
     @Test
@@ -41,16 +60,7 @@ public class TemperatureTest {
     }
 
     @Test
-    public void getAsCelsius() {
-        final double celsiusResult = celsiusTemp.getAsCelsius();
-        final double delisleResult = delisleTemp.getAsCelsius();
-        final double fahrenheitResult = fahrenheitTemp.getAsCelsius();
-        final double kelvinResult = kelvinTemp.getAsCelsius();
-        final double newtonResult = newtonTemp.getAsCelsius();
-        final double rankineResult = rankineTemp.getAsCelsius();
-        final double reaumurResult = reaumurTemp.getAsCelsius();
-        final double romerResult = romerTemp.getAsCelsius();
-
+    public void testGetAsCelsius() {
         // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
         Assert.assertEquals(celsiusResult, celsiusResult, 0.02);
         Assert.assertEquals(celsiusResult, delisleResult, 0.02);
@@ -63,16 +73,7 @@ public class TemperatureTest {
     }
 
     @Test
-    public void getAsDelisle() {
-        final double celsiusResult = celsiusTemp.getAsDelisle();
-        final double delisleResult = delisleTemp.getAsDelisle();
-        final double fahrenheitResult = fahrenheitTemp.getAsDelisle();
-        final double kelvinResult = kelvinTemp.getAsDelisle();
-        final double newtonResult = newtonTemp.getAsDelisle();
-        final double rankineResult = rankineTemp.getAsDelisle();
-        final double reaumurResult = reaumurTemp.getAsDelisle();
-        final double romerResult = romerTemp.getAsDelisle();
-
+    public void testGetAsDelisle() {
         // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
         Assert.assertEquals(delisleResult, celsiusResult, 0.02);
         Assert.assertEquals(delisleResult, delisleResult, 0.02);
@@ -85,16 +86,7 @@ public class TemperatureTest {
     }
 
     @Test
-    public void getAsFahrenheit() {
-        final double celsiusResult = celsiusTemp.getAsFahrenheit();
-        final double delisleResult = delisleTemp.getAsFahrenheit();
-        final double fahrenheitResult = fahrenheitTemp.getAsFahrenheit();
-        final double kelvinResult = kelvinTemp.getAsFahrenheit();
-        final double newtonResult = newtonTemp.getAsFahrenheit();
-        final double rankineResult = rankineTemp.getAsFahrenheit();
-        final double reaumurResult = reaumurTemp.getAsFahrenheit();
-        final double romerResult = romerTemp.getAsFahrenheit();
-
+    public void testGetAsFahrenheit() {
         // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
         Assert.assertEquals(fahrenheitResult, celsiusResult, 0.02);
         Assert.assertEquals(fahrenheitResult, delisleResult, 0.02);
@@ -107,16 +99,7 @@ public class TemperatureTest {
     }
 
     @Test
-    public void getAsKelvin() {
-        final double celsiusResult = celsiusTemp.getAsKelvin();
-        final double delisleResult = delisleTemp.getAsKelvin();
-        final double fahrenheitResult = fahrenheitTemp.getAsKelvin();
-        final double kelvinResult = kelvinTemp.getAsKelvin();
-        final double newtonResult = newtonTemp.getAsKelvin();
-        final double rankineResult = rankineTemp.getAsKelvin();
-        final double reaumurResult = reaumurTemp.getAsKelvin();
-        final double romerResult = romerTemp.getAsKelvin();
-
+    public void testGetAsKelvin() {
         // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
         Assert.assertEquals(kelvinResult, celsiusResult, 0.02);
         Assert.assertEquals(kelvinResult, delisleResult, 0.02);
@@ -129,16 +112,7 @@ public class TemperatureTest {
     }
 
     @Test
-    public void getAsNewton() {
-        final double celsiusResult = celsiusTemp.getAsNewton();
-        final double delisleResult = delisleTemp.getAsNewton();
-        final double fahrenheitResult = fahrenheitTemp.getAsNewton();
-        final double kelvinResult = kelvinTemp.getAsNewton();
-        final double newtonResult = newtonTemp.getAsNewton();
-        final double rankineResult = rankineTemp.getAsNewton();
-        final double reaumurResult = reaumurTemp.getAsNewton();
-        final double romerResult = romerTemp.getAsNewton();
-
+    public void testGetAsNewton() {
         // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
         Assert.assertEquals(newtonResult, celsiusResult, 0.02);
         Assert.assertEquals(newtonResult, delisleResult, 0.02);
@@ -151,16 +125,7 @@ public class TemperatureTest {
     }
 
     @Test
-    public void getAsRankine() {
-        final double celsiusResult = celsiusTemp.getAsRankine();
-        final double delisleResult = delisleTemp.getAsRankine();
-        final double fahrenheitResult = fahrenheitTemp.getAsRankine();
-        final double kelvinResult = kelvinTemp.getAsRankine();
-        final double newtonResult = newtonTemp.getAsRankine();
-        final double rankineResult = rankineTemp.getAsRankine();
-        final double reaumurResult = reaumurTemp.getAsRankine();
-        final double romerResult = romerTemp.getAsRankine();
-
+    public void testGetAsRankine() {
         // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
         Assert.assertEquals(rankineResult, celsiusResult, 0.02);
         Assert.assertEquals(rankineResult, delisleResult, 0.02);
@@ -173,16 +138,7 @@ public class TemperatureTest {
     }
 
     @Test
-    public void getAsReaumur() {
-        final double celsiusResult = celsiusTemp.getAsReaumur();
-        final double delisleResult = delisleTemp.getAsReaumur();
-        final double fahrenheitResult = fahrenheitTemp.getAsReaumur();
-        final double kelvinResult = kelvinTemp.getAsReaumur();
-        final double newtonResult = newtonTemp.getAsReaumur();
-        final double rankineResult = rankineTemp.getAsReaumur();
-        final double reaumurResult = reaumurTemp.getAsReaumur();
-        final double romerResult = romerTemp.getAsReaumur();
-
+    public void testGetAsReaumur() {
         // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
         Assert.assertEquals(reaumurResult, celsiusResult, 0.02);
         Assert.assertEquals(reaumurResult, delisleResult, 0.02);
@@ -195,16 +151,7 @@ public class TemperatureTest {
     }
 
     @Test
-    public void getAsRomer() {
-        final double celsiusResult = celsiusTemp.getAsRomer();
-        final double delisleResult = delisleTemp.getAsRomer();
-        final double fahrenheitResult = fahrenheitTemp.getAsRomer();
-        final double kelvinResult = kelvinTemp.getAsRomer();
-        final double newtonResult = newtonTemp.getAsRomer();
-        final double rankineResult = rankineTemp.getAsRomer();
-        final double reaumurResult = reaumurTemp.getAsRomer();
-        final double romerResult = romerTemp.getAsRomer();
-
+    public void testGetAsRomer() {
         // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
         Assert.assertEquals(romerResult, celsiusResult, 0.02);
         Assert.assertEquals(romerResult, delisleResult, 0.02);
@@ -216,8 +163,13 @@ public class TemperatureTest {
         Assert.assertEquals(romerResult, romerResult, 0.02);
     }
 
+    @Test(expected=NullPointerException.class)
+    public void testConvertToUnit_withNullTemperatureUnit() {
+        celsiusTemp.convertToUnit(null);
+    }
+
     @Test
-    public void convertToCelsius() {
+    public void testConvertToUnit_celsius() {
         Assert.assertEquals(celsiusTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.CELSIUS).getTemperature(), 0.2);
         Assert.assertEquals(celsiusTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.CELSIUS).getTemperature(), 0.2);
         Assert.assertEquals(celsiusTemp.getTemperature(), fahrenheitTemp.convertToUnit(TemperatureUnit.CELSIUS).getTemperature(), 0.2);
@@ -229,7 +181,7 @@ public class TemperatureTest {
     }
 
     @Test
-    public void convertToDelisle() {
+    public void testConvertToUnit_delisle() {
         Assert.assertEquals(delisleTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.DELISLE).getTemperature(), 0.2);
         Assert.assertEquals(delisleTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.DELISLE).getTemperature(), 0.2);
         Assert.assertEquals(delisleTemp.getTemperature(), fahrenheitTemp.convertToUnit(TemperatureUnit.DELISLE).getTemperature(), 0.2);
@@ -241,7 +193,7 @@ public class TemperatureTest {
     }
 
     @Test
-    public void convertToFahrenheit() {
+    public void testConvertToUnit_fahrenheit() {
         Assert.assertEquals(fahrenheitTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.FAHRENHEIT).getTemperature(), 0.2);
         Assert.assertEquals(fahrenheitTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.FAHRENHEIT).getTemperature(), 0.2);
         Assert.assertEquals(fahrenheitTemp.getTemperature(), fahrenheitTemp.convertToUnit(TemperatureUnit.FAHRENHEIT).getTemperature(), 0.2);
@@ -253,7 +205,7 @@ public class TemperatureTest {
     }
 
     @Test
-    public void convertToKelvin() {
+    public void testConvertToUnit_kelvin() {
         Assert.assertEquals(kelvinTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.KELVIN).getTemperature(), 0.2);
         Assert.assertEquals(kelvinTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.KELVIN).getTemperature(), 0.2);
         Assert.assertEquals(kelvinTemp.getTemperature(), fahrenheitTemp.convertToUnit(TemperatureUnit.KELVIN).getTemperature(), 0.2);
@@ -265,7 +217,7 @@ public class TemperatureTest {
     }
 
     @Test
-    public void convertToNewton() {
+    public void testConvertToUnit_newton() {
         Assert.assertEquals(newtonTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.NEWTON).getTemperature(), 0.2);
         Assert.assertEquals(newtonTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.NEWTON).getTemperature(), 0.2);
         Assert.assertEquals(newtonTemp.getTemperature(), fahrenheitTemp.convertToUnit(TemperatureUnit.NEWTON).getTemperature(), 0.2);
@@ -277,7 +229,7 @@ public class TemperatureTest {
     }
 
     @Test
-    public void convertToRankine() {
+    public void testConvertToUnit_rankine() {
         Assert.assertEquals(rankineTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.RANKINE).getTemperature(), 0.2);
         Assert.assertEquals(rankineTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.RANKINE).getTemperature(), 0.2);
         Assert.assertEquals(rankineTemp.getTemperature(), fahrenheitTemp.convertToUnit(TemperatureUnit.RANKINE).getTemperature(), 0.2);
@@ -289,7 +241,7 @@ public class TemperatureTest {
     }
 
     @Test
-    public void convertToReaumur() {
+    public void testConvertToUnit_reaumur() {
         Assert.assertEquals(reaumurTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.REAUMUR).getTemperature(), 0.2);
         Assert.assertEquals(reaumurTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.REAUMUR).getTemperature(), 0.2);
         Assert.assertEquals(reaumurTemp.getTemperature(), fahrenheitTemp.convertToUnit(TemperatureUnit.REAUMUR).getTemperature(), 0.2);
@@ -301,7 +253,7 @@ public class TemperatureTest {
     }
 
     @Test
-    public void convertToRomer() {
+    public void testConvertToUnit_romer() {
         Assert.assertEquals(romerTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.ROMER).getTemperature(), 0.2);
         Assert.assertEquals(romerTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.ROMER).getTemperature(), 0.2);
         Assert.assertEquals(romerTemp.getTemperature(), fahrenheitTemp.convertToUnit(TemperatureUnit.ROMER).getTemperature(), 0.2);
