@@ -220,6 +220,7 @@ public class TemperatureTest {
     }
 
     private void testConvertToUnit(final double expectedResult, final TemperatureUnit newUnit) {
+        // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
         Assert.assertEquals(romerTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.ROMER).getTemperature(), 0.2);
         Assert.assertEquals(romerTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.ROMER).getTemperature(), 0.2);
         Assert.assertEquals(romerTemp.getTemperature(), fahrenheitTemp.convertToUnit(TemperatureUnit.ROMER).getTemperature(), 0.2);
