@@ -1,6 +1,7 @@
 package com.valkryst.temperature;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class TemperatureTest {
@@ -15,7 +16,8 @@ public class TemperatureTest {
     private Temperature reaumurTemp;
     private Temperature romerTemp;
 
-    private void setTestData() {
+    @Before
+    private void initializeTestData() {
         celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
         delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
         fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
@@ -28,8 +30,6 @@ public class TemperatureTest {
 
     @Test
     public void getAsCelsius() {
-        setTestData();
-
         final double celsiusResult = celsiusTemp.getAsCelsius();
         final double delisleResult = delisleTemp.getAsCelsius();
         final double fahrenheitResult = fahrenheitTemp.getAsCelsius();
@@ -52,8 +52,6 @@ public class TemperatureTest {
 
     @Test
     public void getAsDelisle() {
-        setTestData();
-
         final double celsiusResult = celsiusTemp.getAsDelisle();
         final double delisleResult = delisleTemp.getAsDelisle();
         final double fahrenheitResult = fahrenheitTemp.getAsDelisle();
@@ -76,8 +74,6 @@ public class TemperatureTest {
 
     @Test
     public void getAsFahrenheit() {
-        setTestData();
-
         final double celsiusResult = celsiusTemp.getAsFahrenheit();
         final double delisleResult = delisleTemp.getAsFahrenheit();
         final double fahrenheitResult = fahrenheitTemp.getAsFahrenheit();
@@ -100,8 +96,6 @@ public class TemperatureTest {
 
     @Test
     public void getAsKelvin() {
-        setTestData();
-
         final double celsiusResult = celsiusTemp.getAsKelvin();
         final double delisleResult = delisleTemp.getAsKelvin();
         final double fahrenheitResult = fahrenheitTemp.getAsKelvin();
@@ -124,8 +118,6 @@ public class TemperatureTest {
 
     @Test
     public void getAsNewton() {
-        setTestData();
-
         final double celsiusResult = celsiusTemp.getAsNewton();
         final double delisleResult = delisleTemp.getAsNewton();
         final double fahrenheitResult = fahrenheitTemp.getAsNewton();
@@ -148,8 +140,6 @@ public class TemperatureTest {
 
     @Test
     public void getAsRankine() {
-        setTestData();
-
         final double celsiusResult = celsiusTemp.getAsRankine();
         final double delisleResult = delisleTemp.getAsRankine();
         final double fahrenheitResult = fahrenheitTemp.getAsRankine();
@@ -172,8 +162,6 @@ public class TemperatureTest {
 
     @Test
     public void getAsReaumur() {
-        setTestData();
-
         final double celsiusResult = celsiusTemp.getAsReaumur();
         final double delisleResult = delisleTemp.getAsReaumur();
         final double fahrenheitResult = fahrenheitTemp.getAsReaumur();
@@ -196,8 +184,6 @@ public class TemperatureTest {
 
     @Test
     public void getAsRomer() {
-        setTestData();
-
         final double celsiusResult = celsiusTemp.getAsRomer();
         final double delisleResult = delisleTemp.getAsRomer();
         final double fahrenheitResult = fahrenheitTemp.getAsRomer();
@@ -220,8 +206,6 @@ public class TemperatureTest {
 
     @Test
     public void convertToCelsius() {
-        setTestData();
-
         Assert.assertEquals(celsiusTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.CELSIUS).getTemperature(), 0.2);
         Assert.assertEquals(celsiusTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.CELSIUS).getTemperature(), 0.2);
         Assert.assertEquals(celsiusTemp.getTemperature(), fahrenheitTemp.convertToUnit(TemperatureUnit.CELSIUS).getTemperature(), 0.2);
@@ -234,8 +218,6 @@ public class TemperatureTest {
 
     @Test
     public void convertToDelisle() {
-        setTestData();
-
         Assert.assertEquals(delisleTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.DELISLE).getTemperature(), 0.2);
         Assert.assertEquals(delisleTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.DELISLE).getTemperature(), 0.2);
         Assert.assertEquals(delisleTemp.getTemperature(), fahrenheitTemp.convertToUnit(TemperatureUnit.DELISLE).getTemperature(), 0.2);
@@ -248,8 +230,6 @@ public class TemperatureTest {
 
     @Test
     public void convertToFahrenheit() {
-        setTestData();
-
         Assert.assertEquals(fahrenheitTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.FAHRENHEIT).getTemperature(), 0.2);
         Assert.assertEquals(fahrenheitTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.FAHRENHEIT).getTemperature(), 0.2);
         Assert.assertEquals(fahrenheitTemp.getTemperature(), fahrenheitTemp.convertToUnit(TemperatureUnit.FAHRENHEIT).getTemperature(), 0.2);
@@ -262,8 +242,6 @@ public class TemperatureTest {
 
     @Test
     public void convertToKelvin() {
-        setTestData();
-
         Assert.assertEquals(kelvinTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.KELVIN).getTemperature(), 0.2);
         Assert.assertEquals(kelvinTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.KELVIN).getTemperature(), 0.2);
         Assert.assertEquals(kelvinTemp.getTemperature(), fahrenheitTemp.convertToUnit(TemperatureUnit.KELVIN).getTemperature(), 0.2);
@@ -276,8 +254,6 @@ public class TemperatureTest {
 
     @Test
     public void convertToNewton() {
-        setTestData();
-
         Assert.assertEquals(newtonTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.NEWTON).getTemperature(), 0.2);
         Assert.assertEquals(newtonTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.NEWTON).getTemperature(), 0.2);
         Assert.assertEquals(newtonTemp.getTemperature(), fahrenheitTemp.convertToUnit(TemperatureUnit.NEWTON).getTemperature(), 0.2);
@@ -290,8 +266,6 @@ public class TemperatureTest {
 
     @Test
     public void convertToRankine() {
-        setTestData();
-
         Assert.assertEquals(rankineTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.RANKINE).getTemperature(), 0.2);
         Assert.assertEquals(rankineTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.RANKINE).getTemperature(), 0.2);
         Assert.assertEquals(rankineTemp.getTemperature(), fahrenheitTemp.convertToUnit(TemperatureUnit.RANKINE).getTemperature(), 0.2);
@@ -304,8 +278,6 @@ public class TemperatureTest {
 
     @Test
     public void convertToReaumur() {
-        setTestData();
-
         Assert.assertEquals(reaumurTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.REAUMUR).getTemperature(), 0.2);
         Assert.assertEquals(reaumurTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.REAUMUR).getTemperature(), 0.2);
         Assert.assertEquals(reaumurTemp.getTemperature(), fahrenheitTemp.convertToUnit(TemperatureUnit.REAUMUR).getTemperature(), 0.2);
@@ -318,8 +290,6 @@ public class TemperatureTest {
 
     @Test
     public void convertToRomer() {
-        setTestData();
-
         Assert.assertEquals(romerTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.ROMER).getTemperature(), 0.2);
         Assert.assertEquals(romerTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.ROMER).getTemperature(), 0.2);
         Assert.assertEquals(romerTemp.getTemperature(), fahrenheitTemp.convertToUnit(TemperatureUnit.ROMER).getTemperature(), 0.2);
