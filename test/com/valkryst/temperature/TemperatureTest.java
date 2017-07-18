@@ -17,7 +17,7 @@ public class TemperatureTest {
     private Temperature romerTemp;
 
     @Before
-    private void initializeTestData() {
+    public void initializeTestData() {
         celsiusTemp = new Temperature(TemperatureUnit.CELSIUS, -273.15);
         delisleTemp = new Temperature(TemperatureUnit.DELISLE, 559.73);
         fahrenheitTemp = new Temperature(TemperatureUnit.FAHRENHEIT, -459.67);
@@ -26,6 +26,18 @@ public class TemperatureTest {
         rankineTemp = new Temperature(TemperatureUnit.RANKINE, 0);
         reaumurTemp = new Temperature(TemperatureUnit.REAUMUR, -218.52);
         romerTemp = new Temperature(TemperatureUnit.ROMER, -135.9);
+    }
+
+    @Test
+    public void testConstructor_withValidInput() {
+        final Temperature temperature = new Temperature(TemperatureUnit.CELSIUS, 1.0);
+        Assert.assertEquals(TemperatureUnit.CELSIUS, temperature.getUnit());
+        Assert.assertEquals(1.0, temperature.getTemperature(), 0.0);
+    }
+
+    @Test(expected=NullPointerException.class)
+    public void testConstructor_withNullTemperatureUnit() {
+        new Temperature(null, 1.0);
     }
 
     @Test
