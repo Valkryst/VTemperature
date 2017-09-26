@@ -221,13 +221,13 @@ public class TemperatureTest {
 
     private void testConvertToUnit(final double expectedResult, final TemperatureUnit newUnit) {
         // Allow for a 0.02 margin of error caused by rounded values being used as the test data:
-        Assert.assertEquals(romerTemp.getTemperature(), celsiusTemp.convertToUnit(TemperatureUnit.ROMER).getTemperature(), 0.2);
-        Assert.assertEquals(romerTemp.getTemperature(), delisleTemp.convertToUnit(TemperatureUnit.ROMER).getTemperature(), 0.2);
-        Assert.assertEquals(romerTemp.getTemperature(), fahrenheitTemp.convertToUnit(TemperatureUnit.ROMER).getTemperature(), 0.2);
-        Assert.assertEquals(romerTemp.getTemperature(), kelvinTemp.convertToUnit(TemperatureUnit.ROMER).getTemperature(), 0.2);
-        Assert.assertEquals(romerTemp.getTemperature(), newtonTemp.convertToUnit(TemperatureUnit.ROMER).getTemperature(), 0.2);
-        Assert.assertEquals(romerTemp.getTemperature(), rankineTemp.convertToUnit(TemperatureUnit.ROMER).getTemperature(), 0.2);
-        Assert.assertEquals(romerTemp.getTemperature(), reaumurTemp.convertToUnit(TemperatureUnit.ROMER).getTemperature(), 0.2);
-        Assert.assertEquals(romerTemp.getTemperature(), romerTemp.convertToUnit(TemperatureUnit.ROMER).getTemperature(), 0.2);
+        Assert.assertEquals(expectedResult, celsiusTemp.convertToUnit(newUnit).getTemperature(), 0.2);
+        Assert.assertEquals(expectedResult, delisleTemp.convertToUnit(newUnit).getTemperature(), 0.2);
+        Assert.assertEquals(expectedResult, fahrenheitTemp.convertToUnit(newUnit).getTemperature(), 0.2);
+        Assert.assertEquals(expectedResult, kelvinTemp.convertToUnit(newUnit).getTemperature(), 0.2);
+        Assert.assertEquals(expectedResult, newtonTemp.convertToUnit(newUnit).getTemperature(), 0.2);
+        Assert.assertEquals(expectedResult, rankineTemp.convertToUnit(newUnit).getTemperature(), 0.2);
+        Assert.assertEquals(expectedResult, reaumurTemp.convertToUnit(newUnit).getTemperature(), 0.2);
+        Assert.assertEquals(expectedResult, romerTemp.convertToUnit(newUnit).getTemperature(), 0.2);
     }
 }
