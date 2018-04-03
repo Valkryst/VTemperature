@@ -8,17 +8,36 @@ Please refer to the LICENSE file for additional information.
 
 ![](https://travis-ci.org/Valkryst/VTemperature.svg?branch=master) [![codecov](https://codecov.io/gh/Valkryst/VTemperature/branch/master/graph/badge.svg)](https://codecov.io/gh/Valkryst/VTemperature) [![Release](https://jitpack.io/v/Valkryst/VTemperature.svg)](https://jitpack.io/#Valkryst/VTemperature)
 
+## Links
+
+* [JavaDoc Documentation](https://valkryst.github.io/VTemperature/)
+
 ## Jar Files & Maven
 
-To use this project as a Maven dependency, click on the JitPack badge [![Release](https://jitpack.io/v/Valkryst/VTemperature.svg)](https://jitpack.io/#Valkryst/VTemperature), select a version, click the "Get it!" button, and then follow the instructions.
+The Maven dependency is hosted off of JitPack, so you will need to add JitPack as a repository before you add VTerminal as a dependency.
 
-If you would rather use a Jar file, then you can find the Jars on the [releases](https://github.com/Valkryst/VTemperature/releases) page.
+### Maven
 
-## JavaDoc Documentation:
+JitPack ([Example](https://github.com/Valkryst/VTerminal/blob/master/pom.xml)):
 
-Whenever a Travis CI build passes, the JavaDocs are auto-generated and made available at the following link.
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
 
-https://valkryst.github.io/VTemperature/
+Dependency:
+
+    <dependency>
+        <groupId>com.github.Valkryst</groupId>
+        <artifactId>VTemperature</artifactId>
+        <version>1.0.1</version>
+    </dependency>
+
+### Jar
+
+Jar files can be found on the [releases](https://github.com/Valkryst/VTemperature/releases) page.
 
 ### How to Use:
 
