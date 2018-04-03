@@ -39,11 +39,6 @@ Dependency:
 
 Jar files can be found on the [releases](https://github.com/Valkryst/VTemperature/releases) page.
 
-### How to Use:
-
-Construct a new Temperature object specifying both the unit type and temperature value, various conversion
-methods can then be called on the object to get the temperature value in a different unit type (scale).
-
 ### Example - Code:
 
 ```Java
