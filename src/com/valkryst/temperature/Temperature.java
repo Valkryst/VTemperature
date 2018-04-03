@@ -1,12 +1,14 @@
 package com.valkryst.temperature;
 
+import lombok.Getter;
+
 import java.util.Objects;
 
 public class Temperature {
     /** The unit of temperature. (Ex: Celsius, Kelvin) */
-    private TemperatureUnit unit;
+    @Getter private TemperatureUnit unit;
     /** The temperature. */
-    private double temperature;
+    @Getter private double temperature;
 
     /**
      * Constructs a new Temperature.
@@ -356,15 +358,5 @@ public class Temperature {
         }
 
         return this;
-    }
-
-    /** @return The unit of temperature. */
-    public synchronized TemperatureUnit getUnit() {
-        return unit;
-    }
-
-    /** @return The temperature. */
-    public synchronized double getTemperature() {
-        return temperature;
     }
 }
