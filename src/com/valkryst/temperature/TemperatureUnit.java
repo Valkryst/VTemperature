@@ -15,10 +15,13 @@ public enum TemperatureUnit {
      * (Ex: CELSIUS is °C, KELVIN is K)
      *
      * @param unit
-     *         The unit.
+     *          The unit.
      *
      * @return
-     *        The symbol.
+     *          The symbol.
+     *
+     * @throws IllegalArgumentException
+     *          If the specified unit is null or unsupported.
      */
     public static String getSymbol(final TemperatureUnit unit) {
         switch (unit) {
