@@ -1,6 +1,7 @@
 package com.valkryst.temperature;
 
 import lombok.Getter;
+import lombok.NonNull;
 
 import java.util.Objects;
 
@@ -22,9 +23,7 @@ public class Temperature {
      * @throws NullPointerException
      *         If the unit is null.
      */
-    public Temperature(final TemperatureUnit unit, final double temperature) {
-        Objects.requireNonNull(unit);
-
+    public Temperature(final @NonNull TemperatureUnit unit, final double temperature) {
         this.unit = unit;
         this.temperature = temperature;
     }
