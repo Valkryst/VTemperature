@@ -1,4 +1,4 @@
-![](https://travis-ci.org/Valkryst/VTemperature.svg?branch=master) [![codecov](https://codecov.io/gh/Valkryst/VTemperature/branch/master/graph/badge.svg)](https://codecov.io/gh/Valkryst/VTemperature) [![Release](https://jitpack.io/v/Valkryst/VTemperature.svg)](https://jitpack.io/#Valkryst/VTemperature)
+![](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiS296RlpmNWZRMHNBdksrSzNHYWRzNTY4QUxsQStlYktHSkZYbW1Pc1RtV0ZpZVZORGRzUm9wV1JjVFZXR1EveVB3elFvYjRTR1haNlExelNROCszbFN3PSIsIml2UGFyYW1ldGVyU3BlYyI6IlpkenNFamNScXpieE1iZE8iLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master) [![codecov](https://codecov.io/gh/Valkryst/VTemperature/branch/master/graph/badge.svg)](https://codecov.io/gh/Valkryst/VTemperature) [![Release](https://jitpack.io/v/Valkryst/VTemperature.svg)](https://jitpack.io/#Valkryst/VTemperature)
 
 ## Links
 
